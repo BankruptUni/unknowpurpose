@@ -15,7 +15,7 @@ def GetCurrency(valor:str)-> bool:
         pass
     return retorno
 
-def GetAllFineCompany(cnpj: str = "") -> None:
+def GetAllFineCompany(cnpj: str = "") -> str:
     """Formulando um método de captação de multas de uma empresa específica caso ela esteja no arquivo da """
     try:        
         if len(cnpj) == 0: 
@@ -38,6 +38,4 @@ def GetAllFineCompany(cnpj: str = "") -> None:
             print("\n".join([f"—{empresa} : R$ {valor}"if GetCurrency(valor) else f"—{empresa} : {valor}"  for empresa, valor in valores]))
     except Exception:
         traceback.print_exc()
-    return None
-#Testes
-GetAllFineCompany("03.362.908/0001-33")
+    return valores[-1][1]
