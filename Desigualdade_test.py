@@ -1,9 +1,10 @@
 import unittest
-from ApiController import Desigualdade as ineq
+from ApiController.Desigualdade import DesigualdadeBusiness as ineq
 
 class TestInequalityUtils(unittest.TestCase):    
     def testeSamplePaises(self, valor: str = "") -> None:
-        retornoMetodoPrincipal = ineq.GetDesigualdadeCountry(2024)
+        business = ineq()
+        retorno_metodo_principal = business.GetDesigualdadeCountry(2024)
         paises = []
         paises.extend([
     ("Switzerland", 0.0372, 0.6279),
@@ -11,6 +12,6 @@ class TestInequalityUtils(unittest.TestCase):
     ("Slovakia", 0.0744, 0.4940000000000001)
 ])
         for pais in paises:
-            self.assertIn(pais, retornoMetodoPrincipal, "Não capturou esses países no mesmo período que tirei de amostra")
+            self.assertIn(pais, retorno_metodo_principal, "Não capturou esses países no mesmo período que tirei de amostra")
     
 
