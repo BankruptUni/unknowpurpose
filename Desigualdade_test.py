@@ -1,9 +1,10 @@
 import unittest
 from ApiController.Desigualdade import DesigualdadeBusiness as ineq
+from Repository.DesigualdadeRepository import DesigualdadeRepository as repository
 
 class TestInequalityUtils(unittest.TestCase):    
     def testeSamplePaises(self, valor: str = "") -> None:
-        business = ineq()
+        business = ineq(repository())
         retorno_metodo_principal = business.GetDesigualdadeCountry(2024)
         paises = []
         paises.extend([
