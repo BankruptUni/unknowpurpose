@@ -29,3 +29,5 @@ class DesigualdadeRepository:
 
                 return sorted(desigualdadePaises, key = lambda pais: pais[0])
         except Exception: traceback.print_exc()
+    def GetDataFrame (self, listagem: list[tuple]) -> None:
+        pass
